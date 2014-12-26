@@ -50,16 +50,23 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="sTo-SI-7HK">
-                        <barButtonItem key="leftBarButtonItem" title="Change" id="LJc-3l-kAA">
-                            <connections>
-                                <action selector="changeData:" destination="nY7-Nf-0SJ" id="eUO-TE-tX5"/>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="hjm-eb-qOA">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fCg-iH-Vx0">
+                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Change">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeData:" destination="nY7-Nf-0SJ" eventType="touchUpInside" id="iEw-X2-BmC"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mI-q9-0fO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1016" y="329"/>
+            <point key="canvasLocation" x="1122" y="270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MFN-VE-rGo">
@@ -72,12 +79,74 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="nY7-Nf-0SJ" kind="relationship" relationship="rootViewController" id="mz2-Zp-xyo"/>
+                        <segue destination="GNL-w7-gfC" kind="relationship" relationship="rootViewController" id="QOa-3x-iKy"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yC6-2E-VyD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="204" y="329"/>
+            <point key="canvasLocation" x="-261" y="270"/>
+        </scene>
+        <!--Case Selection Controller-->
+        <scene sceneID="ler-9p-Pp4">
+            <objects>
+                <tableViewController id="GNL-w7-gfC" customClass="CaseSelectionController" customModule="CollectionViewIssue" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2Nj-jJ-1Uj">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="rRb-10-Ubw">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="6NJ-Ql-MLk" style="IBUITableViewCellStyleDefault" id="BMp-Pw-Qif">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BMp-Pw-Qif" id="Mam-Sq-Nba">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Invalid update: invalid number of items in section" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6NJ-Ql-MLk">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="nY7-Nf-0SJ" kind="show" identifier="case1" id="p9x-Xi-5gW"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="dQg-WN-prS" style="IBUITableViewCellStyleDefault" id="ELQ-gL-fEf">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ELQ-gL-fEf" id="uwv-sh-No4">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Request for index path for global index" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dQg-WN-prS">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="nY7-Nf-0SJ" kind="show" identifier="case2" id="cU5-f8-awG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="GNL-w7-gfC" id="n8D-zv-Rcl"/>
+                            <outlet property="delegate" destination="GNL-w7-gfC" id="dlr-Zc-9HX"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="t1r-FI-dWF"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rin-aA-RL4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="270"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="p9x-Xi-5gW"/>
+    </inferredMetricsTieBreakers>
 </document>
